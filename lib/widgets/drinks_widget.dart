@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:smtutorial/models/drink.dart';
 
 class DrinksWidget extends StatelessWidget {
-  final Drink drink;
-  final Function onChanged;
+  final Drink? drink;
+  final Function? onChanged;
 
-  const DrinksWidget({Key key, this.drink, this.onChanged}) : super(key: key);
+  const DrinksWidget({Key? key, this.drink, this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Checkbox(
-          value: drink.selected,
-          onChanged: onChanged,
+          value: drink!.selected,
+          onChanged: onChanged as void Function(bool?)?,
         ),
-        Text(drink.name)
+        Text(drink!.name)
       ],
     );
   }
